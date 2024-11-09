@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "github.com/shshimamo/pubsubpb/pb";
+
+message WrappedMessage {
+  enum MessageType {
+    TYPE_A = 0;
+    TYPE_B = 1;
+  }
+
+  MessageType type = 1;
+  bytes payload = 2;
+}
+
+message MessageTypeA {
+  string field1 = 1;
+  int32 field2 = 2;
+}
+
+
+message MessageTypeB {
+  string field1 = 1;
+  bool field2 = 2;
+}
